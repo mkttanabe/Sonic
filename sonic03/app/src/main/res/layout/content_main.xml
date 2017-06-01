@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="jp.klab.sonic03.MainActivity"
+    tools:showIn="@layout/activity_main">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Sine Wave Test"
+        android:id="@+id/textView01"
+        android:gravity="center"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <ToggleButton
+        android:textAllCaps="false"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textOff="200Hz"
+        android:textOn="200Hz"
+        android:id="@+id/button01"
+        android:layout_below="@+id/textView01"
+        android:layout_alignStart="@+id/textView01"
+        android:layout_marginTop="20dp"/>
+
+    <ToggleButton
+        android:textAllCaps="false"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textOff="400Hz"
+        android:textOn="400Hz"
+        android:id="@+id/button02"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/textView01"
+        android:layout_toLeftOf="@+id/button01"
+        android:layout_alignEnd="@+id/textView01" />
+
+    <ToggleButton
+        android:textAllCaps="false"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textOff="800Hz"
+        android:textOn="800Hz"
+        android:id="@+id/button03"
+        android:layout_below="@+id/button02"
+        android:layout_alignStart="@+id/textView01"
+        android:layout_marginTop="10dp"/>
+
+    <ToggleButton
+        android:textAllCaps="false"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textOff="1.6kHz"
+        android:textOn="1.6kHz"
+        android:id="@+id/button04"
+        android:layout_below="@+id/button02"
+        android:layout_marginTop="10dp"
+        android:layout_toLeftOf="@+id/button03"
+        android:layout_alignEnd="@+id/textView01" />
+
+    <ToggleButton
+        android:textAllCaps="false"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textOff="2kHz"
+        android:textOn="2kHz"
+        android:id="@+id/button05"
+        android:layout_below="@+id/button04"
+        android:layout_alignStart="@+id/textView01"
+        android:layout_marginTop="10dp" />
+
+    <ToggleButton
+        android:textAllCaps="false"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textOff="4kHz"
+        android:textOn="4kHz"
+        android:id="@+id/button06"
+        android:layout_below="@+id/button04"
+        android:layout_marginTop="10dp"
+        android:layout_toLeftOf="@+id/button05"
+        android:layout_alignEnd="@+id/textView01" />
+
+    <ToggleButton
+        android:textAllCaps="false"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textOff="8kHz"
+        android:textOn="8kHz"
+        android:id="@+id/button07"
+        android:layout_below="@+id/button05"
+        android:layout_alignStart="@+id/textView01"
+        android:layout_marginTop="10dp" />
+
+    <ToggleButton
+        android:textAllCaps="false"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textOff="10kHz"
+        android:textOn="10kHz"
+        android:id="@+id/button08"
+        android:layout_below="@+id/button05"
+        android:layout_marginTop="10dp"
+        android:layout_toLeftOf="@+id/button07"
+        android:layout_alignEnd="@+id/textView01" />
+
+    <ToggleButton
+        android:textAllCaps="false"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textOff="12kHz"
+        android:textOn="12kHz"
+        android:id="@+id/button09"
+        android:layout_below="@+id/button07"
+        android:layout_alignStart="@+id/textView01"
+        android:layout_marginTop="10dp" />
+
+    <ToggleButton
+        android:textAllCaps="false"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textOff="14kHz"
+        android:textOn="14kHz"
+        android:id="@+id/button10"
+        android:layout_below="@+id/button07"
+        android:layout_marginTop="10dp"
+        android:layout_toLeftOf="@+id/button09"
+        android:layout_alignEnd="@+id/textView01" />
+
+    <ToggleButton
+        android:textAllCaps="false"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textOff="SONG"
+        android:textOn="SONG"
+        android:id="@+id/button11"
+        android:layout_below="@+id/button10"
+        android:layout_alignStart="@+id/textView01"
+        android:layout_alignEnd="@+id/textView01"
+        android:layout_marginTop="10dp"/>
+
+
+
+</RelativeLayout>
