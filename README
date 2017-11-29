@@ -2,20 +2,20 @@ Sonic
 
 Copyright (c) 2017 KLab Inc.
 
-éŸ³æ³¢ã«ã‚ˆã‚‹æƒ…å ±é€šä¿¡ã®å®Ÿé¨“
+‰¹”g‚É‚æ‚éî•ñ’ÊM‚ÌÀŒ±
 
-ãƒ–ãƒ­ã‚°ã‚¨ãƒ³ãƒˆãƒª
+ƒuƒƒOƒGƒ“ƒgƒŠ
 http://dsas.blog.klab.org/archives/2017-05/52274882.html
 http://dsas.blog.klab.org/archives/2017-06/52275767.html
 http://dsas.blog.klab.org/archives/2017-06/52276488.html
 http://dsas.blog.klab.org/archives/2017-06/52276755.html
 http://dsas.blog.klab.org/archives/2017-06/52276891.html
 
-2017-11-29 è¿½è¨˜ï¼š
-Android 6.0 ä»¥é™ã§ã¯ RECORD_AUDIO ã«ã¤ã„ã¦å®Ÿè¡Œæ™‚ãƒ‘ãƒ¼ãƒŸãƒƒã‚·ãƒ§ãƒ³ã‚’
-å–å¾—ã™ã‚‹å¿…è¦ãŒã‚ã‚‹. 
+2017-11-29 ’Ç‹LF
+Android 6.0 ˆÈ~‚Å‚Í RECORD_AUDIO ‚É‚Â‚¢‚ÄÀsƒp[ƒ~ƒbƒVƒ‡ƒ“‚ğ
+æ“¾‚·‚é•K—v‚ª‚ ‚é. 
 https://developer.android.com/training/permissions/requesting.html
-sonic01 ã® MainActivity.java ã‚’å‚ç…§ã®ã“ã¨.
+sonic01 ‚Ì MainActivity.java ‚ğQÆ‚Ì‚±‚Æ.
 
 --------------
 
