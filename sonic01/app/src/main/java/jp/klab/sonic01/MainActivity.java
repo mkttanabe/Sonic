@@ -13,6 +13,8 @@
 
 package jp.klab.sonic01;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
 import android.media.AudioFormat;
 import android.media.AudioRecord;
 import android.media.AudioManager;
@@ -21,6 +23,8 @@ import android.media.MediaRecorder;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -68,6 +72,19 @@ public class MainActivity extends AppCompatActivity
         mProgressBar.setMax(BLOCK_NUMBER);
         mProgressBar.setProgress(0);
 
+        /***** add for Android 6.0 or later ****/
+        // https://developer.android.com/training/permissions/requesting.html
+        // https://developer.android.com/topic/libraries/support-library/index.html#backward
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO) !=
+                PackageManager.PERMISSION_GRANTED) {
+            // RECORD_AUDIO の実行時パーミッションを要求
+            ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.RECORD_AUDIO}, 1);
+        }
+        initAudio();
+        /**** add end ****/
+
+/***** move to initAudio() ****
         int bufferSizeInBytes = AudioRecord.getMinBufferSize(SAMPLE_RATE,
                                         AudioFormat.CHANNEL_IN_MONO,
                                         AudioFormat.ENCODING_PCM_16BIT);
@@ -91,7 +108,53 @@ public class MainActivity extends AppCompatActivity
                                         AudioFormat.ENCODING_PCM_16BIT,
                                         bufferSizeInBytes,
                                         AudioTrack.MODE_STREAM);
+****/
     }
+
+    /**** add for Android 6.0 or later ****/
+    // https://developer.android.com/training/permissions/requesting.html
+    @Override
+    public void onRequestPermissionsResult(int requestCode,
+                                           String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case 1: {
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    initAudio();
+                } else {
+                    finish();
+                }
+                return;
+            }
+        }
+    }
+
+    private void initAudio() {
+        int bufferSizeInBytes = AudioRecord.getMinBufferSize(SAMPLE_RATE,
+                AudioFormat.CHANNEL_IN_MONO,
+                AudioFormat.ENCODING_PCM_16BIT);
+
+        mBufferSizeInShort = bufferSizeInBytes / 2;
+        // 録音用バッファ
+        mRecordBuf = new short[mBufferSizeInShort];
+        // 再生用バッファ
+        mPlayBuf = new short[mBufferSizeInShort * BLOCK_NUMBER];
+
+        // 録音用
+        mAudioRecord = new AudioRecord(MediaRecorder.AudioSource.MIC,
+                SAMPLE_RATE,
+                AudioFormat.CHANNEL_IN_MONO,
+                AudioFormat.ENCODING_PCM_16BIT,
+                bufferSizeInBytes);
+        // 再生用
+        mAudioTrack = new AudioTrack(AudioManager.STREAM_MUSIC,
+                SAMPLE_RATE,
+                AudioFormat.CHANNEL_OUT_MONO,
+                AudioFormat.ENCODING_PCM_16BIT,
+                bufferSizeInBytes,
+                AudioTrack.MODE_STREAM);
+    }
+    /**** add end ****/
 
     @Override
     public void onStop() {

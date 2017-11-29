@@ -1,3 +1,36 @@
 Sonic
 
 Copyright (c) 2017 KLab Inc.
+
+音波による情報通信の実験
+
+ブログエントリ
+http://dsas.blog.klab.org/archives/2017-05/52274882.html
+http://dsas.blog.klab.org/archives/2017-06/52275767.html
+http://dsas.blog.klab.org/archives/2017-06/52276488.html
+http://dsas.blog.klab.org/archives/2017-06/52276755.html
+http://dsas.blog.klab.org/archives/2017-06/52276891.html
+
+2017-11-29 追記：
+Android 6.0 以降では RECORD_AUDIO について実行時パーミッションを
+取得する必要がある. 
+https://developer.android.com/training/permissions/requesting.html
+sonic01 の MainActivity.java を参照のこと.
+
+--------------
+
+Experiments of sonic communication.
+
+Blog entries (in Japanese)
+http://dsas.blog.klab.org/archives/2017-05/52274882.html
+http://dsas.blog.klab.org/archives/2017-06/52275767.html
+http://dsas.blog.klab.org/archives/2017-06/52276488.html
+http://dsas.blog.klab.org/archives/2017-06/52276755.html
+http://dsas.blog.klab.org/archives/2017-06/52276891.html
+
+2017-11-29 Note:
+You need to request RECORD_AUDIO Permission at runtime
+in Android 6.0 or later.
+https://developer.android.com/training/permissions/requesting.html
+See MainActivity.java of sonic01.
+
